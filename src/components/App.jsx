@@ -69,6 +69,10 @@ const App = () => {
   const deleteDishById = (id) => {
     const updatedData = data.filter((dish) => dish.id !== id)
     setData(updatedData)
+    setEditMode(false)
+    setTempDish({
+      id: null, name: '', price: '', country: ''
+    })
   }
 
   return (
