@@ -10,7 +10,6 @@
 }
 
 .container_form {
-  background-color: blue;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -23,7 +22,11 @@
 }
 
 .container_title {
-  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: violet;
+  font-size: 3rem;
   width: 90%;
   height: 20%;
 }
@@ -93,7 +96,6 @@
 }
 
 .tables {
-  background-color: green;
   box-sizing: border-box;
   display: flex;
   justify-content: center;

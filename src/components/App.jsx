@@ -14,6 +14,7 @@ const App = () => {
   })
   const [editMode, setEditMode] = useState(false)
 
+  // this function handle the inputs changes
   const handleChange = (e) => {
     const {name, value} = e.target
     setTempDish({
@@ -40,8 +41,13 @@ const App = () => {
       price: +tempDish.price,
       id:id
     }])
+
+    setTempDish({
+      id: null, name: '', price: '', country: ''
+    })
   }
 
+  // this function fill inputs with information
   const edit = (dish) => {
     setTempDish({
       ...dish
@@ -52,8 +58,11 @@ const App = () => {
   // UPDATE: this function edit any dish property by id, receives the dish id, the property(ej: price, name) and the new value for that property.
   const editDish = (tempDish) => {
     const index = data.findIndex((dish) => dish.id === tempDish.id)
-    data[index] = tempDish
-    console.log(data)
+    data[index] = {...tempDish, price: +tempDish.price}
+    setEditMode(false)
+    setTempDish({
+      id: null, name: '', price: '', country: ''
+    })
   }
   
   // DELETE: this function delete a dish by id
@@ -66,7 +75,7 @@ const App = () => {
     <div className="container">
       <div className='container_form'>
         <div className='container_title'>
-          Restaurante
+          Chinesse Restaurant
         </div>
         <div className='container_inputs'>
           <div className='form'>
